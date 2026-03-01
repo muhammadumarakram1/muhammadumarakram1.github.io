@@ -37,25 +37,52 @@
 
         /* Header */
         .header {
+            display: flex;
+            align-items: center;
+            gap: 28px;
             margin-bottom: 40px;
         }
 
-        .header h1 {
+        .header-text {
+            flex: 1;
+        }
+
+        .header-text h1 {
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
 
-        .header h1 span {
+        .header-text h1 span {
             color: #00c8b4;
         }
 
-        .header .tagline {
+        .header-text .tagline {
             font-size: 1.1rem;
             color: #b4c3dc;
             font-weight: 400;
             line-height: 1.6;
+        }
+
+        /* Profile picture */
+        .profile-pic-wrapper {
+            flex-shrink: 0;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00c8b4, #3884f4);
+            padding: 3px;
+            box-shadow: 0 4px 24px rgba(0, 200, 180, 0.2);
+        }
+
+        .profile-pic-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1e2740;
+            display: block;
         }
 
         /* Stats row */
@@ -225,7 +252,9 @@
 
         /* Responsive */
         @media (max-width: 480px) {
-            .header h1 { font-size: 1.7rem; }
+            .header { flex-direction: column-reverse; text-align: center; gap: 20px; }
+            .header-text h1 { font-size: 1.7rem; }
+            .profile-pic-wrapper { width: 90px; height: 90px; }
             .stats { gap: 16px; }
             .stat .number { font-size: 1.4rem; }
             .tech-tags span { padding: 6px 12px; font-size: 0.8rem; }
@@ -237,8 +266,13 @@
         <div class="accent-bar"></div>
         
         <div class="header">
-            <h1>Muhammad Umar <span>Akram</span></h1>
-            <p class="tagline">Full-Stack Software Engineer building reliable, AI-powered backends that scale.</p>
+            <div class="header-text">
+                <h1>Muhammad Umar <span>Akram</span></h1>
+                <p class="tagline">Full-Stack Software Engineer building reliable, AI-powered backends that scale.</p>
+            </div>
+            <div class="profile-pic-wrapper">
+                <img src="umar-profile-picture.jpg" alt="Muhammad Umar Akram — Full-Stack Software Engineer based in Lahore, Pakistan">
+            </div>
         </div>
 
         <div class="stats">
@@ -328,11 +362,9 @@
         function copyEmail() {
             var email = 'muhammadumarakram1@gmail.com';
             try {
-                // Modern approach
                 if (navigator.clipboard && window.isSecureContext) {
                     navigator.clipboard.writeText(email).then(showCopied);
                 } else {
-                    // Fallback for HTTP / local files
                     var ta = document.createElement('textarea');
                     ta.value = email;
                     ta.style.position = 'fixed';
@@ -344,7 +376,6 @@
                     showCopied();
                 }
             } catch (e) {
-                // Last resort: prompt user to copy manually
                 window.prompt('Copy this email address:', email);
             }
         }
