@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Umar Akram | Full-Stack Software Engineer</title>
+    <meta name="description" content="Full-Stack Software Engineer specializing in AI-powered backends, Node.js, .NET, LangChain, and RAG. Let's build something scalable.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #1e2740;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            padding: 40px 24px;
+        }
+
+        /* Top accent bar */
+        .accent-bar {
+            width: 60px;
+            height: 4px;
+            background: #00c8b4;
+            border-radius: 2px;
+            margin-bottom: 32px;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 span {
+            color: #00c8b4;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            color: #b4c3dc;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Stats row */
+        .stats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+            padding: 24px 0;
+            border-top: 1px solid rgba(56, 132, 244, 0.2);
+            border-bottom: 1px solid rgba(56, 132, 244, 0.2);
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3884f4;
+            display: block;
+        }
+
+        .stat .label {
+            font-size: 0.75rem;
+            color: #8899b4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Tech stack */
+        .tech-section {
+            margin-bottom: 40px;
+        }
+
+        .tech-section h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8899b4;
+            margin-bottom: 16px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tags span {
+            background: rgba(56, 132, 244, 0.12);
+            border: 1px solid rgba(56, 132, 244, 0.25);
+            color: #b4c3dc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tech-tags span:hover {
+            background: rgba(56, 132, 244, 0.25);
+            color: #fff;
+        }
+
+        /* About blurb */
+        .about {
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #b4c3dc;
+            font-size: 0.95rem;
+        }
+
+        .about strong {
+            color: #fff;
+        }
+
+        /* CTA Buttons */
+        .cta-section h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8899b4;
+            margin-bottom: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.25s;
+        }
+
+        .btn .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.25s;
+        }
+
+        .btn:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .btn-primary {
+            background: #00c8b4;
+            color: #1e2740;
+        }
+
+        .btn-primary:hover {
+            background: #00e0c8;
+            box-shadow: 0 4px 20px rgba(0, 200, 180, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(56, 132, 244, 0.12);
+            border: 1px solid rgba(56, 132, 244, 0.3);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 132, 244, 0.25);
+            border-color: rgba(56, 132, 244, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(180, 195, 220, 0.2);
+            color: #b4c3dc;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(180, 195, 220, 0.5);
+            color: #fff;
+        }
+
+        .btn .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn .left-content {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 48px;
+            text-align: center;
+            color: #556480;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1.7rem; }
+            .stats { gap: 16px; }
+            .stat .number { font-size: 1.4rem; }
+            .tech-tags span { padding: 6px 12px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="accent-bar"></div>
+        
+        <div class="header">
+            <h1>Muhammad Umar <span>Akram</span></h1>
+            <p class="tagline">Full-Stack Software Engineer building reliable, AI-powered backends that scale.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="number">87%</span>
+                <span class="label">Latency Reduction</span>
+            </div>
+            <div class="stat">
+                <span class="number">1M+</span>
+                <span class="label">Requests / Day</span>
+            </div>
+            <div class="stat">
+                <span class="number">90%</span>
+                <span class="label">Test Coverage</span>
+            </div>
+            <div class="stat">
+                <span class="number">A</span>
+                <span class="label">Sonar Rating</span>
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <h2>Core Stack</h2>
+            <div class="tech-tags">
+                <span>Node.js</span>
+                <span>.NET Core</span>
+                <span>LangChain</span>
+                <span>RAG</span>
+                <span>React</span>
+                <span>NestJS</span>
+                <span>OpenAI</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>Redis</span>
+            </div>
+        </div>
+
+        <p class="about">
+            I help teams automate data workflows, cut latency, and scale AI-ready APIs. 
+            From <strong>event-driven microservices</strong> to <strong>production RAG pipelines</strong>, 
+            I build backends that handle real traffic without drama. 
+            Currently engineering at <strong>wavenest</strong> in Lahore, Pakistan.
+        </p>
+
+        <div class="cta-section">
+            <h2>Let's Connect</h2>
+            <div class="buttons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadumarakram1@gmail.com&su=Let's%20Connect%20-%20From%20LinkedIn" target="_blank" class="btn btn-primary">
+                    <span class="left-content">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13L2 4"/></svg>
+                        Email Me via Gmail
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+                
+                <button onclick="copyEmail()" class="btn btn-outline" id="copyBtn" style="cursor:pointer; border:1px solid rgba(180,195,220,0.2); font-family:inherit;">
+                    <span class="left-content">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        <span id="copyText">Copy Email Address</span>
+                    </span>
+                    <span class="arrow">📋</span>
+                </button>
+                
+                <a href="https://www.linkedin.com/in/muhammadumarakram1/" target="_blank" class="btn btn-secondary">
+                    <span class="left-content">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                        Connect on LinkedIn
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+                
+                <a href="https://github.com/muhammadumarakram1" target="_blank" class="btn btn-outline">
+                    <span class="left-content">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View GitHub Projects
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Muhammad Umar Akram · Lahore, Pakistan</p>
+        </div>
+    </div>
+    <script>
+        function copyEmail() {
+            var email = 'muhammadumarakram1@gmail.com';
+            try {
+                // Modern approach
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(email).then(showCopied);
+                } else {
+                    // Fallback for HTTP / local files
+                    var ta = document.createElement('textarea');
+                    ta.value = email;
+                    ta.style.position = 'fixed';
+                    ta.style.left = '-9999px';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    showCopied();
+                }
+            } catch (e) {
+                // Last resort: prompt user to copy manually
+                window.prompt('Copy this email address:', email);
+            }
+        }
+
+        function showCopied() {
+            document.getElementById('copyText').textContent = 'Copied! ✓';
+            document.getElementById('copyBtn').style.borderColor = '#00c8b4';
+            setTimeout(function() {
+                document.getElementById('copyText').textContent = 'Copy Email Address';
+                document.getElementById('copyBtn').style.borderColor = 'rgba(180,195,220,0.2)';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
